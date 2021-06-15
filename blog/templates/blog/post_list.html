@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <article class="post", style="border-style:solid;border-color:#eca5e3;border-radius: 10px;">
+            <time class="date">
+				<p>Created: {{ post.created_date }}</p>
+                <p>Last Edited: {{ post.published_date }}</p>
+            </time>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <p>End Date: <p>
+        </article>
+    {% endfor %}
+{% endblock %}
